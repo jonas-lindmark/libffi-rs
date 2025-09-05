@@ -40,6 +40,7 @@
 
 #ifdef __NetBSD__
 #include <sys/param.h>
+#include <err.h>
 #endif
 
 #if __NetBSD_Version__ - 0 >= 799007200
@@ -121,6 +122,14 @@ ffi_tramp_is_present (__attribute__((unused)) void *ptr)
 {
   return 0;
 }
+
+void *
+ffi_data_to_code_pointer (void *data)
+{
+  errx(1, "ffi_data_to_code_pointer: not implemented");
+  return NULL;
+}
+
 #else /* !NetBSD with PROT_MPROTECT */
 
 #if !FFI_MMAP_EXEC_WRIT && !FFI_EXEC_TRAMPOLINE_TABLE
