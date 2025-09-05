@@ -9,9 +9,9 @@
 
 #include <stdlib.h>
 #include <unistd.h>
-#ifdef __rtems__
+#if defined __rtems__
 void rtems_cache_flush_multiple_data_lines( const void *, size_t );
-#else
+#elif  defined __linux__
 #include <sys/syscall.h>
 #ifdef __MINT__
 #include <mint/mintbind.h>
