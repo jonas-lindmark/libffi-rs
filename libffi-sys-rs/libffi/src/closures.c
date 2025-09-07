@@ -444,8 +444,8 @@ ffi_closure_free (void *ptr)
 /* We don't want sys/mman.h to be included after we redefine mmap and
    dlmunmap.  */
 #include <sys/mman.h>
-#define LACKS_SYS_MMAN_H 1
 #endif /* __linux__ */
+#define LACKS_SYS_MMAN_H 1
 
 #if FFI_MMAP_EXEC_SELINUX
 #include <sys/statfs.h>
